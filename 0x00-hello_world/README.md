@@ -1,2 +1,1 @@
-Day one of C - Hello, World
-
+Day one of C Language - Hello, World
