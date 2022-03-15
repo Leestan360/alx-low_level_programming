@@ -2,17 +2,21 @@
 
 /**
  * print_last_digit - return the last digit
- * @a: number to check
+ * @a: input
  * Return: 0 or 1
  */
 
 int print_last_digit(int a)
+
 {
 	int b;
 
-	a = a >= 0 ? a : a * -1;
 	b = a % 10;
-	_putchar('0' + b);
 
+	if (b < 0)
+	{
+		b = b * -1;
+	}
+	_putchar(b + '0');
 	return (b);
 }
