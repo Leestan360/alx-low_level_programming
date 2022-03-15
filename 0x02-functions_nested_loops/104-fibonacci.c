@@ -9,23 +9,36 @@
 
 int main(void)
 {
-	int i = 0;
-	unsigned long int a = 0, b = 1, c = 0;
+	unsigned long int i, a, b, c, d, e, f;
 
-	while (i < 98)
+	a = 1;
+	b = 2;
+
+	printf("%lu", a);
+
+	for (i = 1; i < 91; i++)
 	{
-		c = a + b;
-		a = b;
-		b = c;
-		printf("%lu", c);
-
-		if (i < 97)
-		{
-			printf(", ");
-		}
-		i++;
+		printf(", %lu", b);
+		b = b + a;
+		a = b - a;
 	}
-	putchar('\n');
+
+	c = a / 1000000000;
+	d = a % 1000000000;
+	e = b / 1000000000;
+	f = b % 1000000000;
+
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", e + (f / 1000000000));
+		printf("%lu", f % 1000000000);
+		e = e + c;
+		c = e + c;
+		f = f + d;
+		d = f - d;
+	}
+
+	printf("\n");
 
 	return (0);
 }
