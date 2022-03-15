@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 
 /**
  * main - main block
@@ -9,36 +10,31 @@
 
 int main(void)
 {
-	unsigned long int i, a, b, c, d, e, f;
+	unsigned long int a = 0, b = 1, c = 0, d = 2;
+	unsigned long int x, y, z;
+	int count;
 
-	a = 1;
-	b = 2;
-
-	printf("%lu", a);
-
-	for (i = 1; i < 91; i++)
+	printf("%lu, %lu, ", b, d);
+	for (count = 2; count < 98; count++)
 	{
-		printf(", %lu", b);
-		b = b + a;
-		a = b - a;
+		if (b + d > LARGEST || c > 0 || a > 0)
+		{
+			x = (b + d) / LARGEST;
+			y = (b + d) % LARGEST;
+			z = a + c + x;
+			a = c, c = z;
+			b = d, b = y;
+			printf("%lu%010lu", c, d);
+		}
+		else
+		{
+			y = b + d;
+			b = d, d = y;
+			printf("%lu", d);
+		}
+		if (count != 97)
+			printf(", ");
 	}
-
-	c = a / 1000000000;
-	d = a % 1000000000;
-	e = b / 1000000000;
-	f = b % 1000000000;
-
-	for (i = 92; i < 99; ++i)
-	{
-		printf(", %lu", e + (f / 1000000000));
-		printf("%lu", f % 1000000000);
-		e = e + c;
-		c = e + c;
-		f = f + d;
-		d = f - d;
-	}
-
 	printf("\n");
-
 	return (0);
 }
