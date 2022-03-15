@@ -20,7 +20,9 @@ int main(void)
 		printf("%lu", c);
 
 		if (i < 97)
+		{
 			printf(", ");
+		}
 		i++;
 	}
 	putchar('\n');
