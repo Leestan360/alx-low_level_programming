@@ -2,7 +2,7 @@
 #define MAIN_H
 
 /**
- * fuction prototypes go down here
+ * function prototypes go down here
  */
 
 int _putchar(char);
