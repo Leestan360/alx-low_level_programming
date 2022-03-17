@@ -24,6 +24,6 @@ int main(void)
 		else
 			printf("%i ", a);
 	}
-	printf("\n");
+	printf("Buzz\n");
 	return (0);
 }
