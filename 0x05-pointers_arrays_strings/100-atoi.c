@@ -19,7 +19,7 @@ int _atoi(char *s)
 
 	b = 0;
 	c = -1;
-	for (a = o; s[a] != '\0'; a++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
 		if (s[a] == '-')
 			c *= -1;
