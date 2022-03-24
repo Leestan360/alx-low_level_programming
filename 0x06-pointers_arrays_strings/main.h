@@ -5,7 +5,7 @@
  * fuction prototypes go down here
  */
 
-int _putchar(char);
+int _putchar(char c);
 
 char *_strcat(char *dest, char *src);
 
