@@ -6,16 +6,16 @@
  * Return: resulting string
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *c)
 {
 	int a;
 
-	for (a = 0; *[a] != '\0'; a++)
+	for (a = 0; c[a] != '\0'; a++)
 	{
-		if (*[a] > 96 && *[a] < 123)
+		if (c[a] > 96 && c[a] < 123)
 		{
-			*[a] -= 32;
+			c[a] -= 32;
 		}
 	}
-	return (*);
+	return (c);
 }
