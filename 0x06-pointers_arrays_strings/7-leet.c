@@ -16,7 +16,7 @@ char *leet(char *s)
 			s[a] = '4';
 		while (s[a] == 'e' || s[a] == 'E')
 			s[a] = '3';
-		while (s[a] == '0' || s[a] == 'O')
+		while (s[a] == 'o' || s[a] == 'O')
 			s[a] = '0';
 		while (s[a] == 't' || s[a] == 'T')
 			s[a] = '7';
