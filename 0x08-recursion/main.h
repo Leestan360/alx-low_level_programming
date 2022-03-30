@@ -33,4 +33,10 @@ int get_length(char *s);
 
 int _helper(char *s, int a, int b);
 
+int wildcmp(char *s1, char *s2);
+
+int _helper_wildcmp(char *s1, char *s2);
+
+char *move(char *s2);
+
 #endif
