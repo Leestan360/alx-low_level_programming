@@ -8,12 +8,44 @@
 
 int is_prime_number(int n)
 {
-	int a;
-
-	if (a == 1)
-		return (1);
-	else if (n % a == 0)
+	if (n < 2)
 		return (0);
+	if (n < 4)
+		return (1);
+	return (helper(n, 2));
+}
+
+/**
+ * _sqrt - returns the square root of a number
+ * @a: the number
+ * @b: number acting as a divisor
+ * Return: square root of a
+ */
+
+int _sqrt(int a, int b)
+{
+	int square;
+
+	square = b * b;
+	if (square >= a)
+		return (b);
 	else
-		return (is_prime_number(n, a - 1));
+		return (_sqrt(a, b + 1));
+}
+
+/**
+ * helper - recursive steps taken
+ * @n: original number of the function is_prime_number
+ * @c: incrementor divisor
+ * Return: 1 if prime and 0 if not
+ */
+
+int helper(int n, int c)
+{
+	if (n % c == 0)
+		return (0);
+	else if (_sqrt(n, 1) < c)
+		return (1);
+	else
+		return (helper(n, c + 1));
 }

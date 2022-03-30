@@ -23,4 +23,8 @@ int halp(int n, int a);
 
 int is_prime_number(int n);
 
+int _sqrt(int a, int b);
+
+int helper(int n, int c);
+
 #endif
