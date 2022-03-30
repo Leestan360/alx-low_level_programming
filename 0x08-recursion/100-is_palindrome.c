@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 
 	length = get_length(s) - 1;
 
-	return (helper(s, --length));
+	return (_helper(s, --length));
 }
 
 /**
@@ -30,20 +30,20 @@ int get_length(char *s)
 }
 
 /**
- * helper - recursive check of palindrome
+ * _helper - recursive check of palindrome
  * @s: string
  * @a: length of string
  * Return: 1 if the string is palindrome and 0 if not
  */
 
-int helper(char *s, int a)
+int _helper(char *s, int a)
 {
 	if (*s == *(s + 1))
 	{
 		if (a <= 0)
 			return (1);
 		else
-			return (helper(++s, a - 2));
+			return (_helper(++s, a - 2));
 	}
 	else
 		return (0);
