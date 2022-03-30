@@ -31,6 +31,6 @@ int is_palindrome(char *s);
 
 int get_length(char *s);
 
-int helper(charr *s, int a);
+int helper(char *s, int a);
 
 #endif
