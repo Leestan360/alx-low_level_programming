@@ -1,5 +1,7 @@
 #include "main.h"
 
+int actaull_sqrt_recursion(int n, int a);
+
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number to return its natural square root
