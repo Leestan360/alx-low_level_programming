@@ -35,8 +35,6 @@ int _helper(char *s, int a, int b);
 
 int wildcmp(char *s1, char *s2);
 
-int _helper_wildcmp(char *s1, char *s2);
-
-char *move(char *s2);
+int _helper_wildcmp(char *s, char a, int b, int c);
 
 #endif
