@@ -10,22 +10,22 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (root_recursion(n, 0));
+	return (actuall_sqrt_recursion(n, 0));
 }
 
 /**
- * root_recursion - recurses to find the natural
+ * actuall_sqrt_recursion - recurses to find the natural
  * square root of a number
  * @n: number to calculate the square root of
  * @a: iterator
  * Return: the resulting square root
  */
 
-int root_recursion(int n, int a)
+int actuall_sqrt_recursion(int n, int a)
 {
 	if (a * a < n)
 		return (-1);
 	if (a * a == n)
 		return (a);
-	return (root_recursion(n, a + 1));
+	return (actuall_sqrt_recursion(n, a + 1));
 }
