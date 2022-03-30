@@ -30,7 +30,8 @@ int get_length(char *s)
 /**
  * _helper - recursive check of palindrome
  * @s: string
- * @a: length of string
+ * @a: iterator
+ * @b: length of the string
  * Return: 1 if the string is palindrome and 0 if not
  */
 
