@@ -31,7 +31,6 @@ char *argstostr(int ac, char **av)
 
 	if (z == NULL)
 	{
-		free(z);
 		return (NULL);
 	}
 	c = 0;
