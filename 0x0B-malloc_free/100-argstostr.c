@@ -25,12 +25,13 @@ char *argstostr(int ac, char **av)
 	{
 		for (b = 0; av[a][b] != '\0'; b++)
 			len++;
-		len += ac;
+		len++;
 	}
-	z = malloc(sizeof(char) * (len + 1));
+	z = malloc(sizeof(*z) * (len + 1));
 
 	if (z == NULL)
 	{
+		free(z);
 		return (NULL);
 	}
 	c = 0;
