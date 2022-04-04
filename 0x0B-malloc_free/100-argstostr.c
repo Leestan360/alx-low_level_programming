@@ -21,31 +21,36 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	for (a = 0; a < ac; a++)
+	for (a = b = 0; a < ac; a++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++)
-			len++;
-	}
-	len += ac;
+		if (av[a] == NULL)
+			return (NULL);
 
-	z = malloc(sizeof(char) * (len + 1));
+		for (c = 0; av[a][b] != '\0'; c++)
+			a++;
+		a++;
+	}
+
+	z = malloc((a + 1) * sizeof(char));
 
 	if (z == NULL)
 	{
+		free(z);
 		return (NULL);
 	}
-	c = 0;
-
-	for (a = 0; a < ac; a++)
+	for (b = c = len = 0; len < a; c++, len++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++)
+		if (av[b][c] == '\0')
 		{
-			z[c] = av[a][b];
-			c++;
+			z[len] = '\n';
+			b++;
+			len++;
+			c = 0;
 		}
-		z[c] = '\n';
-		c++;
+		if (len < a - 1)
+			z[len] = av[b][c];
 	}
+	z[len] = '\0';
 
 	return (z);
 }
