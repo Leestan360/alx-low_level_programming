@@ -10,8 +10,9 @@
  * Return: void
  */
 
-void free_grid(int **grid, int height)
+void free_grid(int **grid __attribute__((unused)), int height)
 {
+	int **a;
 	int x;
 
 	for (x = 0; x < height; x++)
