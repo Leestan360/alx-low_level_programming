@@ -19,7 +19,7 @@ int _isdigit(char *s)
 			return (0);
 		a++;
 	}
-	return (1);
+	return (a);
 }
 
 /**
@@ -32,11 +32,11 @@ int _strlen(char *s)
 {
 	int a = 0;
 
-	while (s[a] != '\0')
+	while (*s++)
 	{
 		a++;
 	}
-	return (1);
+	return (a);
 }
 
 /**
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 		return (1);
 	for (a = 0; a <= len1 + len2; a++)
 		result[a] = 0;
-	for (len1 = _strlen(s1) - 1; len1 >= 0; len1--)
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
 		carry = 0;
