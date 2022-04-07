@@ -3,73 +3,85 @@
 #include <stdlib.h>
 
 /**
- * _isdigit - checks for a non-digit in a string
- * @s: string to evaluate
- * Return: 0 if non-digit is found
- * of 1 ontherwise
+ * _puts - prints a string followed by a new newline
+ * @str: str to print
  */
 
-int _isdigit(char *s)
+void _puts(char *str)
 {
 	int a = 0;
 
-	while (s[a])
+	while (str[a])
 	{
-		if (s[a] < '0' || s[a] > '9')
-			return (0);
+		_putchar(str[a]);
 		a++;
 	}
-	return (1);
 }
 
 /**
- * _strlen - returns the length of the string
- * @s: string to evaluate
- * Return: length of the string
+ * _atoi - converts a string to an int
+ * @s: pointer to string
+ * Return: converted int
  */
 
-int _strlen(char *s)
+int _atoi(const char *s)
 {
-	int a = 0;
+	int sign = 1;
+	unsigned long int resp = 0, first, a;
 
-	while (s[a] != '\0')
+	for (first = 0; !(s[first] >= 48 && s[first] <= 57); first++)
+		if (s[first] == '-')
+			sign *= -1;
+
+	for (a = first; s[a] >= 48 && s[a] <= 57; a++)
 	{
-		a++;
+		resp *= 10;
+		resp += (s[a] - 48);
 	}
-	return (a);
+
+	return (sign * resp);
 }
 
 /**
- * errors - handles errors in main
+ * print_int - prints an integer
+ * @n: int
+ * Return: void
  */
 
-void errors(void)
+void print_int(unsigned long int n)
 {
-	printf("Error\n");
-	exit(98);
+	unsigned long int divisor = 1;
+	unsigned long int a, resp;
+
+	for (a = 0; n / divisor > 9; a++, divisor *= 10)
+		;
+
+	for (; divisor >= 1; n %= divisor, divisor /= 10)
+	{
+		resp = n / divisor;
+		_putchar('0' + resp);
+	}
 }
 
 /**
- * main - multiplies two numbers
+ * main - returns the product of two positive numbers
  * @argc: number of arguments
- * @argv: the arguments
- * Return: 0 on Success
+ * @argv: arguments
+ * Return: 0
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-	int a;
-	int mul = 1;
+	(void)argc;
 
-	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
-		errors();
-	else
+	if (argc != 3 || !_atoi(argv[1]) || !_atoi(argv[2]))
 	{
-		for (a = 1; a < argc; a++)
-		{
-			mul *= atoi(argv[a]);
-		}
-		printf("%d\n", mul);
+		_puts("Error\n");
+		exit(98);
 	}
+
+	print_int(_atoi(argv[1]) * _atoi(argv[2]));
+	_putchar('\n');
+
 	return (0);
 }
