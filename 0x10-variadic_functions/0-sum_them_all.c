@@ -8,7 +8,7 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int a;
+	unsigned int i;
 	int sum = 0;
 	va_list list;
 
@@ -17,7 +17,7 @@ int sum_them_all(const unsigned int n, ...)
 
 	va_start(list, n);
 
-	for (a = 0; a < n; a++)
+	for (i = 0; i < n; i++)
 		sum += va_arg(list, int);
 
 	va_end(list);
