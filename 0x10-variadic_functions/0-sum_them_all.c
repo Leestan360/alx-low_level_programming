@@ -1,4 +1,6 @@
 #include "variadic_fucntions.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * sum_them_all - returns sum of all of its
